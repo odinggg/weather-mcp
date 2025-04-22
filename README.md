@@ -20,38 +20,33 @@
 
 1. **克隆仓库**
 
-```bash
-git clone https://github.com/yourusername/weather-mcp-server.git
-cd weather-mcp-server
-```
+   ```bash
+   git clone https://github.com/odinggg/weather-mcp.git
+   cd weather-mcp
+   ```
 
-2. **使用 uv 安装依赖**
-
-```bash
-uv pip install -e .
-```
-
-3. **连接到 MCP 服务器**
+2. **连接到 MCP 服务器**
 
 将以下 JSON 配置添加到您的 MCP 客户端（例如 Claude Desktop）中：
 
-```json
-{
-  "mcpServers": {
-    "weather": {
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/path/to/weather-mcp-server",
-        "run",
-        "main.py",
-        "--api-key",
-        "your_openweather_api_key_here"
-      ]
-    }
-  }
-}
-```
+   ```json
+   {
+      "mcpServers": {
+         "weather": {
+            "command": "uv", // uv path
+            "args": [
+               "--directory",
+               "/your/path/to/weather-mcp",
+               "run",
+               "-m",
+               "weather_mcp_server.main",
+               "--api-key",
+               "xxxxxxxxxxxxxxx"
+            ]
+         }
+      }
+   }
+   ```
 
 对于 **Claude Desktop**，将此保存为 `claude_desktop_config.json`，位置在：
 

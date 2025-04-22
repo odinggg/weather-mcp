@@ -36,6 +36,7 @@ build/
 
 .venv/
 uv.lock
+**.egg-info/
 
 ### VS Code ###
 .vscode/
